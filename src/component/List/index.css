@@ -1,0 +1,37 @@
+.vertical-list {
+    width: 300px;
+    min-height: 500px;
+    border: 1px solid #333;
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.top-widget {
+    height: 20px; 
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 10px; 
+}
+
+.search-input {
+    flex: 0 0 80%; 
+    height: 100%; 
+    border: 1px solid #333; 
+    border-radius: 4px; 
+    background-color: #2a2a2a;   
+    padding: 0 8px;
+}
+
+.add-box {
+    width: 20px; 
+    height: 20px; 
+    margin-left: 10px; 
+    background-color: #555; 
+    border-radius: 4px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-size: 15px;
+}    
