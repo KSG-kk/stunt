@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import "./index.css";
 
@@ -15,39 +16,23 @@ export default class Feature extends Component {
           <div className="avatar">头像</div>
         </div>
 
-        <div className="component">
-          <div className="component-box">信息</div>
-        </div>
-        <div className="component">
-          <div className="component-box">联系人</div>
-        </div>
-        <div className="component">
-          <div className="component-box">收藏</div>
-        </div>
-        <div className="component">
-          <div className="component-box">文件夹</div>
-        </div>
-        <div className="component">
-          <div className="component-box">朋友圈</div>
-        </div>
-        <div className="component">
-          <div className="component-box">视频号</div>
-        </div>
-        <div className="component">
-          <div className="component-box">看一看</div>
-        </div>
-        <div className="component">
-          <div className="component-box">搜一搜</div>
-        </div>
-        <div className="component">
-          <div className="component-box">小程序</div>
-        </div>
-        <div className="component">
-          <div className="component-box">我的手机</div>
-        </div>
-        <div className="component">
-          <div className="component-box">其他</div>
-        </div>
+        {[
+          "信息",
+          "联系人",
+          "收藏",
+          "文件夹",
+          "朋友圈",
+          "视频号",
+          "看一看",
+          "搜一搜",
+          "小程序",
+          "我的手机",
+          "其他",
+        ].map((item, index) => (
+          <div key={index} className="component">
+            <div className="component-box">{item}</div>
+          </div>
+        ))}
       </div>
     );
   }

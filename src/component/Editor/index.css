@@ -1,0 +1,36 @@
+.lower-part {
+  height: 40%;
+  border: 1px solid #333;
+  border-radius: 0 0 12px 0;
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-tools {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+.tool-item {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.voice-call {
+  margin-left: auto;
+}
+
+.input-box {
+  height: 120px;
+  border: 1px solid #1a1a1a;
+  border-radius: 4px;
+  padding: 10px;
+  background-color: #1a1a1a;
+  color: #fff;
+  vertical-align: top;
+  resize: none;
+}

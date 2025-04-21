@@ -11,9 +11,10 @@ export default class App extends Component {
       <div className="big-box">
         <Feature />
         <List />
-
-        <Message />
-        <Editor />
+        <div className="remaining-area">
+          <Message />
+          <Editor />
+        </div>
       </div>
     );
   }
