@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import "./index.css";
 
-export default class Message extends Component {
-  render() {
+export default function Message() {
     return (
       <div className="upper-part">
         <div className="contact-name-component">
@@ -31,4 +30,3 @@ export default class Message extends Component {
       </div>
     );
   }
-}
