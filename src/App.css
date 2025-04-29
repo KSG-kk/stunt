@@ -11,6 +11,7 @@ body {
 .big-box {
   width: 1200px;
   min-height: 500px;
+  height: 90vh;
   padding: 20px;
   border: 1px solid #333;
   border-radius: 12px;
@@ -26,4 +27,6 @@ body {
   flex-direction: column;
   gap: 0px;
   margin-left: -20px;
+  height: 100%;
+  min-height: 0;
 }

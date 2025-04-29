@@ -1,43 +1,48 @@
 import React from "react";
 import "./index.css";
 
-export default function List() {
-  // 直接定义会话数组数据（无需类型注释）
-  const sessions = [
-    {
-      name: "我的电脑",
-      message: "阿巴阿巴阿巴",
-      time: "15:14",
-    },
-    {
-      name: "文件传输助手",
-      message: "已收到文件",
-      time: "16:05",
-    },
-    {
-      name: "小明",
-      message: "今晚一起吃饭？",
-      time: "18:30",
-    },
-  ];
-
+export default function List({
+  sessions,
+  users,
+  currentSessionId,
+  setCurrentSessionId,
+}) {
   return (
     <div className="vertical-area">
       <div className="top-widget">
         <input type="text" className="search-input" placeholder="搜索" />
         <div className="action-box">+</div>
       </div>
-
-      {sessions.map((session, index) => (
-        <div key={index} className="chat-list-item">
-          <div className="chat-item-avatar"></div>
-          <div className="chat-item-content">
-            <div className="chat-item-name">{session.name}</div>
-            <div className="chat-item-message">{session.message}</div>
+      {sessions.map((session) => {
+        const isActive = session.id === currentSessionId;
+        const isGroup = session.type === "group";
+        return (
+          <div
+            key={session.id}
+            className={`chat-list-item${isActive ? " active" : ""}`}
+            onClick={() => setCurrentSessionId(session.id)}
+            style={{
+              cursor: "pointer",
+              background: isActive ? "#222" : undefined,
+            }}
+          >
+            <div className="chat-item-avatar">
+              {/* 可放头像 */}
+              {isGroup ? "群" : "私"}
+            </div>
+            <div className="chat-item-content">
+              <div className="chat-item-name">{session.name}</div>
+              <div className="chat-item-message">{session.lastMessage}</div>
+            </div>
+            <div className="chat-item-time">
+              {new Date(session.lastTime).toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit",
+              })}
+            </div>
           </div>
-          <div className="chat-item-time">{session.time}</div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
